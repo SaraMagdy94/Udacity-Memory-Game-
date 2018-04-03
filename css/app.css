@@ -1,0 +1,480 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/source.gif');
+    /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 300;
+    color: rgb(252, 252, 144);
+}
+
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(180deg);
+    transition: width 2s, height 2s, transform 0.8s;
+    background: #02b3e4;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    transform: rotateY(180deg);
+    transition: width 2s, height 2s, transform 0.8s;
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.deck .card.close {
+    transform: rotateY(0deg);
+    transition: width 2s, height 2s, transform 0.8s;
+    background: #2e3d49;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+    transition: 0.7s;
+}
+
+.reverse {
+    transform: rotateY(0);
+    transition: 0.7s;
+}
+
+.blur {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+.deck .card .red {
+    background-color: red;
+}
+
+.gold-star {
+    color: rgb(252, 252, 144);
+}
+
+#timer {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+    background-color: #9D84CB;
+    padding: 7px;
+    font-size: 20px
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+    margin-right: 15px
+}
+
+.restart:hover {
+    transform: rotate(360deg);
+    transition: transform 1s;
+}
+
+.Play {
+    background: #ffffffed;
+    top: 420px;
+    left: 620px;
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    margin: -175px 0 0 -250px;
+    border-radius: 10px;
+    color: #e60f4f;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.Play img {
+    width: 300px;
+    height: 150px;
+    margin-bottom: 20px
+}
+
+.Play>* {
+    margin-bottom: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+button {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #f30a65;
+    background-color: #a5dc86a6;
+    border: none;
+    transition: 0.5s;
+    display: block;
+}
+
+#stay {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #2e3d49;
+    background-color: #f30a6547;
+    border: none;
+    transition: 0.5s;
+    display: block;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 610px) {
+    .deck {
+        width: 500px;
+        height: 500px;
+        padding: 20px;
+        margin: 0;
+    }
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+    .score-panel {
+        width: 420px;
+    }
+    .Play {
+        width: 400px;
+        height: 350px;
+        border-radius: 8px;
+        top: 400px;
+        left: 350px;
+        font-size: 20px;
+    }
+    button,
+    #stay {
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .Play img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .deck {
+        width: 450px;
+        height: 450px;
+        padding: 20px;
+        margin: 0px;
+    }
+    .deck .card {
+        height: 90px;
+        width: 90px;
+        margin: 0;
+    }
+    .score-panel {
+        width: 80%;
+        height: 40px;
+    }
+    #timer {
+        margin-left: 70px;
+    }
+    h1 {
+        font-size: 20px;
+        margin: 5px 0;
+    }
+    .restart {
+        font-size: 24px;
+    }
+    .Play {
+        width: 400px;
+        height: 350px;
+        margin: -200px 0 0 -95px;
+        border-radius: 8px;
+        font-size: 18px;
+    }
+    .Play>* {
+        margin-bottom: 5px;
+    }
+    .hide {
+        display: none;
+    }
+    button,
+    #stay {
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .Play img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .deck {
+        width: 380px;
+        height: 300px;
+        padding: 18px;
+        box-shadow: none;
+    }
+    .deck .card {
+        height: 80px;
+        width: 80px;
+    }
+    .score-panel {
+        width: 300px;
+    }
+    .restart {
+        font-size: 20px;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    #timer {
+        margin-left: 10px
+    }
+    .Play {
+        width: 380px;
+        height: 300px;
+        margin: 40px 0 0 -90px;
+        font-size: 16px;
+        top: 30%;
+    }
+    .hide {
+        display: none;
+    }
+    button,
+    #stay {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    .Play img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .deck {
+        width: 300px;
+        height: 300px;
+    }
+    .deck .card {
+        height: 60px;
+        width: 60px;
+    }
+    .score-panel {
+        width: 300px;
+    }
+    .show {
+        font-size: 25px;
+    }
+    .Play {
+        width: 300px;
+        height: 270px;
+        margin: 50px 0 0 -90px;
+        font-size: 16px;
+        top: 30%;
+    }
+    .hide {
+        display: none;
+    }
+    button,
+    #stay {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+    .Play img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .deck {
+        width: 250px;
+        height: 250px;
+        padding: 5px;
+    }
+    .deck .card {
+        height: 50px;
+        width: 50px;
+    }
+    .score-panel {
+        width: 200px;
+        height: 30px;
+        font-size: 12px;
+    }
+    .restart {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 15px;
+    }
+    .deck .show {
+        font-size: 10px;
+    }
+    .Play {
+        width: 250px;
+        height: 220px;
+        margin: 100px 0 0 -114px;
+        font-size: 16px;
+        top: 20%;
+    }
+    .Play img {
+        width: 70px;
+        height: 70px;
+    }
+    button,
+    #stay {
+        padding: 4px 8px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .deck {
+        width: 150px;
+        height: 150px;
+        padding: 3px;
+    }
+    .deck .card {
+        height: 30px;
+        width: 30px;
+    }
+    .score-panel {
+        width: 160px;
+        font-size: 5px;
+    }
+    .restart {
+        font-size: 10px;
+    }
+    #timer {
+        margin-left: 5px
+    }
+    .deck .show {
+        font-size: 18px;
+    }
+    .Play {
+        width: 150px;
+        height: 170px;
+        margin: 100px 0 0 -88px;
+        font-size: 12px;
+        top: 10%;
+    }
+    .Play img {
+        width: 50px;
+        height: 50px;
+    }
+    .hide {
+        display: none;
+    }
+    button,
+    #stay {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
