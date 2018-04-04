@@ -41,8 +41,8 @@ h1 {
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 560px;
+    height: 580px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -51,12 +51,12 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
+    margin: 0 0 5px;
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 106px;
+    width: 106px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -91,21 +91,6 @@ h1 {
     transform: rotateY(0deg);
     transition: width 2s, height 2s, transform 0.8s;
     background: #2e3d49;
-}
-
-.rotate {
-    transform: rotateY(180deg);
-    transition: 0.7s;
-}
-
-.reverse {
-    transform: rotateY(0);
-    transition: 0.7s;
-}
-
-.blur {
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
 }
 
 .deck .card .red {
@@ -160,8 +145,8 @@ h1 {
 
 .Play {
     background: #ffffffed;
-    top: 420px;
-    left: 620px;
+    top: 70%;
+    left: 45%;
     position: absolute;
     width: 600px;
     height: 450px;
@@ -222,26 +207,46 @@ button:hover {
     transform: scale(1.05);
 }
 
+footer {
+    margin-top: 5px;
+}
+
+footer h1 {
+    font-family: 'Niconne', cursive;
+    color: rgb(252, 252, 144);
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 610px) {
     .deck {
         width: 500px;
-        height: 500px;
+        height: 600px;
         padding: 20px;
         margin: 0;
     }
     .deck .card {
         height: 100px;
         width: 100px;
+        margin-bottom: 50px
     }
     .score-panel {
         width: 420px;
+        border-radius: 5px
+    }
+    #timer {
+        margin-left: 60px
+    }
+    h1 {
+        font-size: 25px
     }
     .Play {
         width: 400px;
         height: 350px;
         border-radius: 8px;
-        top: 400px;
-        left: 350px;
+        top: 70%;
+        left: 60%;
         font-size: 20px;
     }
     button,
@@ -254,227 +259,129 @@ button:hover {
         border-radius: 5px;
     }
     .Play img {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 100px;
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 414px) {
     .deck {
-        width: 450px;
-        height: 450px;
-        padding: 20px;
-        margin: 0px;
-    }
-    .deck .card {
-        height: 90px;
-        width: 90px;
+        width: 85%;
+        height: 460px;
+        padding: 15px;
         margin: 0;
     }
-    .score-panel {
-        width: 80%;
-        height: 40px;
-    }
-    #timer {
-        margin-left: 70px;
-    }
-    h1 {
-        font-size: 20px;
-        margin: 5px 0;
-    }
-    .restart {
-        font-size: 24px;
-    }
-    .Play {
-        width: 400px;
-        height: 350px;
-        margin: -200px 0 0 -95px;
-        border-radius: 8px;
-        font-size: 18px;
-    }
-    .Play>* {
-        margin-bottom: 5px;
-    }
-    .hide {
-        display: none;
-    }
-    button,
-    #stay {
-        padding: 10px 20px;
-        text-align: center;
-        font-size: 18px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    .Play img {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .deck {
-        width: 380px;
-        height: 300px;
-        padding: 18px;
-        box-shadow: none;
-    }
     .deck .card {
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
+        margin-bottom: 50px
     }
     .score-panel {
-        width: 300px;
-    }
-    .restart {
-        font-size: 20px;
-    }
-    h1 {
-        font-size: 15px;
+        width: 250px;
+        border-radius: 5px;
+        font-size: 15px
     }
     #timer {
-        margin-left: 10px
+        margin-left: 20px
     }
-    .Play {
-        width: 380px;
-        height: 300px;
-        margin: 40px 0 0 -90px;
-        font-size: 16px;
-        top: 30%;
-    }
-    .hide {
-        display: none;
-    }
-    button,
-    #stay {
-        padding: 8px 15px;
-        font-size: 16px;
-    }
-    .Play img {
-        width: 90px;
-        height: 90px;
+    h1,
+    footer h1 {
+        font-size: 20px
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 365px)and (min-width: 320px) {
     .deck {
-        width: 300px;
-        height: 300px;
+        width: 85%;
+        height: 420px;
     }
     .deck .card {
         height: 60px;
         width: 60px;
     }
-    .score-panel {
-        width: 300px;
-    }
-    .show {
-        font-size: 25px;
-    }
-    .Play {
-        width: 300px;
-        height: 270px;
-        margin: 50px 0 0 -90px;
-        font-size: 16px;
-        top: 30%;
-    }
-    .hide {
-        display: none;
-    }
-    button,
-    #stay {
-        padding: 8px 15px;
-        font-size: 16px;
-    }
-    .Play img {
-        width: 90px;
-        height: 90px;
-    }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 320px) and (min-width: 275px) {
     .deck {
-        width: 250px;
-        height: 250px;
-        padding: 5px;
+        width: 85%;
+        height: 400px;
     }
     .deck .card {
         height: 50px;
         width: 50px;
+    }
+    .score-panel {
+        width: 250px;
+        border-radius: 5px;
+        font-size: 15px
+    }
+}
+
+@media screen and (max-width: 275px) and (min-width: 225px) {
+    .deck {
+        width: 85%;
+        height: 350px;
+    }
+    .deck .card {
+        height: 40px;
+        width: 40px;
+        padding: 5px
     }
     .score-panel {
         width: 200px;
-        height: 30px;
-        font-size: 12px;
+        border-radius: 5px;
+        font-size: 10px
     }
-    .restart {
-        font-size: 12px;
-    }
-    h1 {
-        font-size: 15px;
-    }
-    .deck .show {
-        font-size: 10px;
-    }
-    .Play {
-        width: 250px;
-        height: 220px;
-        margin: 100px 0 0 -114px;
-        font-size: 16px;
-        top: 20%;
-    }
-    .Play img {
-        width: 70px;
-        height: 70px;
-    }
-    button,
-    #stay {
-        padding: 4px 8px;
-        font-size: 15px;
+    h1,
+    footer h1 {
+        font-size: 15px
     }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 225px)and (min-width: 200px) {
     .deck {
-        width: 150px;
-        height: 150px;
-        padding: 3px;
+        width: 85%;
+        height: 320px;
     }
     .deck .card {
-        height: 30px;
-        width: 30px;
+        height: 35px;
+        width: 35px;
+        padding: 5px
     }
     .score-panel {
-        width: 160px;
-        font-size: 5px;
-    }
-    .restart {
-        font-size: 10px;
+        width: 150px;
+        border-radius: 5px;
+        font-size: 6px
     }
     #timer {
-        margin-left: 5px
+        margin-left: 2px
     }
-    .deck .show {
-        font-size: 18px;
+    h1,
+    footer h1 {
+        font-size: 15px
     }
-    .Play {
+}
+
+@media screen and (max-width: 200px)and (min-width: 100px) {
+    .deck {
+        width: 85%;
+        height: 650px;
+    }
+    .deck .card {
+        height: 35px;
+        width: 35px;
+        padding: 5px
+    }
+    .score-panel {
         width: 150px;
-        height: 170px;
-        margin: 100px 0 0 -88px;
-        font-size: 12px;
-        top: 10%;
+        border-radius: 5px;
+        font-size: 6px
     }
-    .Play img {
-        width: 50px;
-        height: 50px;
+    #timer {
+        margin-left: 2px
     }
-    .hide {
-        display: none;
-    }
-    button,
-    #stay {
-        padding: 4px 8px;
-        font-size: 12px;
+    h1,
+    footer h1 {
+        font-size: 10px
     }
 }
