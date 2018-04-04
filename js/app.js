@@ -54,9 +54,9 @@
     let timerInterval;
     let timerCounter = 0;
     let timerMin = 0;
-    var stars3 = 15;
-    var stars2 = 30;
-    var stars1 = 45;
+    var stars3 = 20;
+    var stars2 = 35;
+    var stars1 = 55;
     let score = rating(counterOfMoves).score;
     const star = '<i class="fa fa-star "></i>';
     const $rating = document.querySelector('.fa-star');
