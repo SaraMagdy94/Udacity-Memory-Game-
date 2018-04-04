@@ -245,8 +245,8 @@ footer h1 {
         width: 400px;
         height: 350px;
         border-radius: 8px;
-        top: 70%;
-        left: 60%;
+        top: 35%;
+        left: 58%;
         font-size: 20px;
     }
     button,
@@ -288,6 +288,14 @@ footer h1 {
     footer h1 {
         font-size: 20px
     }
+    .Play {
+        width: 300px;
+        height: 300px;
+        border-radius: 8px;
+        top: 30%;
+        left: 75%;
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 365px)and (min-width: 320px) {
@@ -298,6 +306,14 @@ footer h1 {
     .deck .card {
         height: 60px;
         width: 60px;
+    }
+    .Play {
+        width: 250px;
+        height: 300px;
+        border-radius: 8px;
+        top: 25%;
+        left: 85%;
+        font-size: 20px;
     }
 }
 
@@ -314,6 +330,24 @@ footer h1 {
         width: 250px;
         border-radius: 5px;
         font-size: 15px
+    }
+    .Play {
+        width: 200px;
+        height: 250px;
+        border-radius: 8px;
+        top: 25%;
+        left: 100%;
+        font-size: 20px;
+    }
+    button,
+    #stay {
+        padding: 6px 12px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .Play img {
+        width: 150px;
+        height: 80px;
     }
 }
 
@@ -336,6 +370,23 @@ footer h1 {
     footer h1 {
         font-size: 15px
     }
+    .Play {
+        width: 200px;
+        height: 250px;
+        border-radius: 8px;
+        top: 25%;
+        left: 105%;
+    }
+    button,
+    #stay {
+        padding: 6px 12px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .Play img {
+        width: 150px;
+        height: 80px;
+    }
 }
 
 @media screen and (max-width: 225px)and (min-width: 200px) {
@@ -349,7 +400,7 @@ footer h1 {
         padding: 5px
     }
     .score-panel {
-        width: 150px;
+        width: 180px;
         border-radius: 5px;
         font-size: 6px
     }
@@ -359,6 +410,23 @@ footer h1 {
     h1,
     footer h1 {
         font-size: 15px
+    }
+    .Play {
+        width: 150px;
+        height: 250px;
+        border-radius: 8px;
+        top: 25%;
+        left: 135%;
+    }
+    button,
+    #stay {
+        padding: 6px 12px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .Play img {
+        width: 90px;
+        height: 50px;
     }
 }
 
@@ -375,13 +443,30 @@ footer h1 {
     .score-panel {
         width: 150px;
         border-radius: 5px;
-        font-size: 6px
+        font-size: 3px
     }
     #timer {
         margin-left: 2px
     }
     h1,
     footer h1 {
-        font-size: 10px
+        font-size: 5px
+    }
+    .Play {
+        width: 130px;
+        height: 250px;
+        border-radius: 8px;
+        top: 25%;
+        left: 175%;
+    }
+    button,
+    #stay {
+        padding: 6px 12px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .Play img {
+        width: 90px;
+        height: 50px;
     }
 }
