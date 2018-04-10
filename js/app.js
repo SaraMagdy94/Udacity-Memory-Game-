@@ -80,7 +80,7 @@
          * - doesn't user click in the symbol (click in the symbol throws exception)
          */
 
-        if (!(evt.target.className === 'deck') && (openList.length <= 2) && !(evt.target.isClicked === 1)) {
+        if (!(evt.target.className === 'deck') && (openList.length <= 2) && !(evt.target.isClicked === 1) && !(evt.target.localName === 'i')) {
             showSymbol(evt);
             addCardToOpenList(evt);
             incrementMoves();
